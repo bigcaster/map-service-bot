@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import logging
 from datetime import datetime
 
 import requests
@@ -13,7 +12,7 @@ server = Flask(__name__)
 
 PORT = int(os.environ.get('PORT', 5000))
 TOKEN = "1719349692:AAHNGDF0WeCkGXy3Ef8uWuYXtWmzQF4VypE"
-HEROKU_APP_NAME = "mapsapibot"
+HEROKU_APP_NAME = "map-service-bot"
 url = 'http://api.openweathermap.org/data/2.5/weather'
 api_weather = 'e4a3da131fe7dd1aa4d06d1ded5c6963'
 bot = telebot.TeleBot(TOKEN)
