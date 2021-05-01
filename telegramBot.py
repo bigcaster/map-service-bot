@@ -160,22 +160,22 @@ def dialog(message):
             bot.send_photo(message.chat.id, im, caption=description)
 
 
-# @server.route('/' + TOKEN, methods=['POST'])
-# def getMessage():
-#     json_string = request.get_data().decode('utf-8')
-#     update = telebot.types.Update.de_json(json_string)
-#     bot.process_new_updates([update])
-#     return "!", 200
-#
-#
-# @server.route("/")
-# def webhook():
-#     bot.remove_webhook()
-#     bot.set_webhook(url=f"https://{HEROKU_APP_NAME}.herokuapp.com/{TOKEN}")
-#     return "?", 200
+@server.route('/' + TOKEN, methods=['POST'])
+def getMessage():
+    json_string = request.get_data().decode('utf-8')
+    update = telebot.types.Update.de_json(json_string)
+    bot.process_new_updates([update])
+    return "!", 200
+
+
+@server.route("/")
+def webhook():
+    bot.remove_webhook()
+    bot.set_webhook(url=f"https://{HEROKU_APP_NAME}.herokuapp.com/{TOKEN}")
+    return "?", 200
 
 
 if __name__ == '__main__':
-    # server.run(host="0.0.0.0", port=PORT)
+    server.run(host="0.0.0.0", port=PORT)
     bot.delete_webhook()
     bot.polling(none_stop=True)
