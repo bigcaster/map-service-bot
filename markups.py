@@ -1,0 +1,45 @@
+import telebot
+
+main_markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
+main1 = telebot.types.KeyboardButton("🧭 Карта")
+main2 = telebot.types.KeyboardButton("⛅ Погода")
+main3 = telebot.types.KeyboardButton("❓ Помощь")
+main_markup.row(main1, main2, main3)
+
+back_markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
+back = telebot.types.KeyboardButton('⬅ Назад')
+back_markup.add(back)
+
+map_type_markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
+type1 = telebot.types.KeyboardButton("🗻 Поиск по объектам")
+type2 = telebot.types.KeyboardButton("🏢 Поиск по организациям")
+type3 = telebot.types.KeyboardButton("⌨ Ввести вручную")
+map_type_markup.add(type1, type2)
+map_type_markup.add(type3)
+map_type_markup.add(back)
+
+geo_type_markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
+geo1 = telebot.types.KeyboardButton("🗻 Поиск объектов")
+geo2 = telebot.types.KeyboardButton("🎪 Поиск ближайших топонимов к объекту")
+geo_type_markup.add(geo1, geo2)
+geo_type_markup.add(back)
+
+toponym_markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
+toponym1 = telebot.types.KeyboardButton("🏠 Дом")
+toponym2 = telebot.types.KeyboardButton("🛣 Улица")
+toponym3 = telebot.types.KeyboardButton("🚇 Метро")
+toponym4 = telebot.types.KeyboardButton("🏙 Район")
+toponym5 = telebot.types.KeyboardButton("🏘 Населенный пункт")
+toponym_markup.add(toponym1, toponym2, toponym3, toponym4, toponym5)
+toponym_markup.add(back)
+
+results_markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
+results1 = telebot.types.KeyboardButton("1")
+results2 = telebot.types.KeyboardButton("3")
+results3 = telebot.types.KeyboardButton("5")
+results_markup.add(results1, results2, results3, back)
+
+request_markup = telebot.types.ReplyKeyboardMarkup(resize_keyboard=True)
+request1 = telebot.types.KeyboardButton("➡ Пропустить")
+request_markup.add(request1)
+request_markup.add(back)
