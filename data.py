@@ -3,7 +3,6 @@ import telebot
 static_api_server = "https://static-maps.yandex.ru/1.x/"
 geocode_api_server = "https://geocode-maps.yandex.ru/1.x/"
 places_api_server = "https://search-maps.yandex.ru/v1/"
-weather_api_key = "eebf9e67-e039-4ee3-b48e-c041e135ba2e"
 static_params = {
     "l": "map",
 }
@@ -17,13 +16,10 @@ places_params = {
     "apikey": "575a0baa-461e-472c-8be2-bb4234d97a53",
     "results": 1
 }
-weather_params = {
-    ""
-}
-format_keys = {"geocode": "geocode", "layer": "l", "слой": "l", "zoom": "z", "масштаб": "z", "scale": "scale",
-               "увеличение": "scale", "marker": "pt", "метка": "pt", "kind": "kind", "place": "text",
-               "results": "results"
-               }
+format_keys = {"g": "geocode", "geocode": "geocode", "геокод": "geocode", "l": "l", "layer": "l", "слой": "l", "z": "z",
+               "zoom": "z", "масштаб": "z", "s": "scale", "scale": "scale", "увеличение": "scale", "m": "pt",
+               "marker": "pt", "метка": "pt", "k": "kind", "kind": "kind", "p": "text", "place": "text",
+               "место": "text", "r": "results", "results": "results", "результаты": "results"}
 format_values = {"sat": "sat", "спутник": "sat", "map": "map", "схема": "map", "sat,skl": "sat,skl",
                  "sat,map": "sat,skl", "hybrid": "sat,skl", "гибрид": "sat,skl", "map,trf": "map,trf",
                  "sat,trf": "sat,trf", "sat,skl,trf": "sat,skl,trf", "house": "house", "street": "street",
