@@ -223,3 +223,6 @@ Http статус: {places_response.status_code} ({places_response.reason})"""
         map_file = "map.png"
         with open(map_file, 'wb') as file:
             file.write(content)
+
+
+map_api = MapAPI()
